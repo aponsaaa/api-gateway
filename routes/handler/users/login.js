@@ -42,7 +42,6 @@ module.exports = async (req, res) => {
         .status(500)
         .json({ status: "error", message: "Service unavailable" });
     }
-
     const { status, data } = error.response;
 
     return res.status(status).json(data);

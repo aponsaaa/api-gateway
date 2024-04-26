@@ -38,7 +38,7 @@ app.use("/media", verifyToken, can("admin", "student"), mediaRouter);
 app.use("/orders", verifyToken, can("admin", "student"), orderPaymentsRouter);
 app.use("/refresh-tokens", refreshTokenRouter);
 app.use("/mentors", verifyToken, can("admin"), mentorsRouter);
-app.use("/image-courses", verifyToken, can("admin"), imageCoursesRouter);
+app.use("/image-courses", verifyToken, imageCoursesRouter);
 app.use("/my-courses", verifyToken, can("admin", "student"), myCoursesRouter);
 app.use("/reviews", verifyToken, can("admin", "student"), reviewsRouter);
 app.use("/webhook", webhookRouter);

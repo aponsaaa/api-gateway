@@ -9,6 +9,7 @@ router.post("/register", usersHandler.register);
 router.post("/login", usersHandler.login);
 router.put("/", verifyToken, usersHandler.update);
 router.get("/", verifyToken, usersHandler.getUser);
+router.get("/list/", verifyToken, usersHandler.getUsers);
 router.post("/logout", verifyToken, usersHandler.logout);
 
 module.exports = router;

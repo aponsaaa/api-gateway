@@ -1,16 +1,12 @@
 const apiAdapter = require("../../apiAdapter");
-const { URL_SERVICE_COURSE } = process.env;
+const { URL_SERVICE_USER } = process.env;
 
-const api = apiAdapter(URL_SERVICE_COURSE);
+const api = apiAdapter(URL_SERVICE_USER);
 
 module.exports = async (req, res) => {
   try {
-    const imageCourse = await api.post("/api/image-courses", {
-      params: {
-        coursesId: courses_id,
-      },
-    });
-    return res.json(imageCourse.data);
+    const user = await api.get(`/users/`);
+    return res.json(user.data);
   } catch (error) {
     if (error.code === "ECONNREFUSED") {
       return res
